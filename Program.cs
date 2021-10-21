@@ -23,6 +23,11 @@ namespace _21._10
             {
                 Console.WriteLine(item);
             }
+             listUser.CLear(user);
+              foreach (var item in listUser)
+            {
+                Console.WriteLine(item);
+            }
 
 
 

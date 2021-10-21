@@ -13,14 +13,8 @@ namespace _21._10
         public void ADD(InfoUser user){
             base.Add(user);
         }
-        public void REmove(InfoUser user){
-           base.Remove(user);
-
-        }
-        public bool FIndAll(InfoUser user){
-           
-            
-            for (var i = 0; i < this.Count(); i++)
+        public bool  REmove(InfoUser user){
+          for (var i = 0; i < this.Count(); i++)
             {
                 if(base[i]?.Pasword != user.Pasword){
                     return false;
@@ -41,6 +35,24 @@ namespace _21._10
                     return false;
                 }
                 if( base[i]?.MiddleName != user.MiddleName){
+                    return false;
+                }
+            
+            }
+            return true;
+
+        }
+        public bool FIndAll(BaseUser user){
+           
+            for (var i = 0; i < this.Count(); i++)
+            {
+                if(base[i]?.Pasword != user.Pasword){
+                    return false;
+                }
+                if( base[i]?.Login != user.Login){
+                    return false;
+                }
+                if( base[i]?.Email != user.Email){
                     return false;
                 }
             

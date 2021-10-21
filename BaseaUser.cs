@@ -12,10 +12,8 @@ namespace _21._10
             Email =emel;
         }
 
-         public override string ToString()
-        { 
-            return base.ToString() + $"Pasword - {Pasword ?? "is no data "} \nLogin - {Login ?? "is no data "} \nEmail - {Email} ";
-        }
+         public override string ToString() =>  $"Pasword - {Pasword ?? "is no data "} \nLogin - {Login ?? "is no data "} \nEmail - {Email} ";
+        
         
 
     }
