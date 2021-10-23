@@ -7,87 +7,41 @@ namespace _21._10
     public class MySystem : List<InfoUser>, IDisposable
     {
         public MySystem(){
-            //base = new List();
+          // = new List<InfoUser>();
         }
 
-        public void ADD(InfoUser user){
+        public new void Add(InfoUser user){
             base.Add(user);
         }
-        public bool  REmove(InfoUser user){
-          for (var i = 0; i < this.Count(); i++)
-            {
-                if(base[i]?.Pasword != user.Pasword){
-                    return false;
-                }
-                if( base[i]?.Login != user.Login){
-                    return false;
-                }
-                if( base[i]?.Age != user.Age){
-                    return false;
-                }
-                if( base[i]?.Email != user.Email){
-                    return false;
-                }
-                if( base[i]?.FirstName != user.FirstName){
-                    return false;
-                }
-                if( base[i]?.LastName != user.LastName){
-                    return false;
-                }
-                if( base[i]?.MiddleName != user.MiddleName){
-                    return false;
-                }
-            
-            }
-            return true;
-
-        }
-        public bool FIndAll(BaseUser user){
-           
+        public new bool Remove( InfoUser user)
+        {
+            InfoUser infoUser = new InfoUser();
             for (var i = 0; i < this.Count(); i++)
             {
-                if(base[i]?.Pasword != user.Pasword){
-                    return false;
+                if (this[i].Pasword == user.Pasword && this[i].Login == user.Login)
+                {
+                    infoUser = this[i];
+                    base.Remove(infoUser);
+                    return true;
                 }
-                if( base[i]?.Login != user.Login){
-                    return false;
-                }
-                if( base[i]?.Email != user.Email){
-                    return false;
-                }
-            
             }
             return true;
         }
-        public void CLear(InfoUser user){
-            
-             for (var i = 0; i < 5; i++)
-            {
-                if(base[i]?.Pasword != user.Pasword){
-                    break;
-                }
-                if( base[i]?.Login != user.Login){
-                    break;
-                }
-                if( base[i]?.Age != user.Age){
-                    break;
-                }
-                if( base[i]?.Email != user.Email){
-                    break;
-                }
-                if( base[i]?.FirstName != user.FirstName){
-                    break;
-                }
-                if( base[i]?.LastName != user.LastName){
-                    break;
-                }
-                if( base[i]?.MiddleName != user.MiddleName){
-                    break;
-                }
-                 this.REmove(user);
+        
+     public new bool Clear()
+        {
+            int t = this.Count();
+                    
+            for (var i = t - 1; i >= 0 ; i--)
+            {base.Remove(this[i]);
             }
-           
+
+            if (base.Count == 0)
+                return true;
+
+            return false;
         }
+        
 
         public  void Dispose(){
             GC.Collect(GC.GetGeneration(this));
