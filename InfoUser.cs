@@ -12,6 +12,7 @@ namespace _21._10
             LastName = last;
             MiddleName = middle;
             Age = age;
+            
         }
         public override string ToString() => base.ToString() +$"\nFirstName - {FirstName}-\nLastName - {LastName}-\nMiddleName - {MiddleName}-\nAge - {Age}";
        
