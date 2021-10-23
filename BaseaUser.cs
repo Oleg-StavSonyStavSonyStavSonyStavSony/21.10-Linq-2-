@@ -11,11 +11,7 @@ namespace _21._10
             Login = log;
             Email =emel;
         }
-
          public override string ToString() =>  $"Pasword - {Pasword ?? "is no data "} \nLogin - {Login ?? "is no data "} \nEmail - {Email} ";
-        
-        
-
     }
 
 }
